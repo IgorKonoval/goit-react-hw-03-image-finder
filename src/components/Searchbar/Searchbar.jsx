@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BsSearch } from 'react-icons/bs';
+import { FcSearch } from 'react-icons/fc';
 import {
   SearchBarHeader,
   SearchForm,
@@ -13,23 +13,23 @@ export class SearchBar extends Component {
     input: '',
   };
 
-  handleSubmit = e => {
-    e.preventDefault();
-    // console.log(e.target);
-    const searchQuery = e.target.elements.searchItem.value.trim();
+  handleSubmit = evt => {
+    evt.preventDefault();
+    const searchQuery = evt.target.elements.searchItem.value.trim();
     this.props.onSubmit(searchQuery);
-    // console.log(searchQuery);
-    e.target.reset();
+    evt.target.reset();
   };
-  handleChange = e => {
-    this.setState({ input: e.target.value });
+
+  handleChange = evt => {
+    this.setState({ input: evt.target.value });
   };
+  
   render() {
     return (
       <SearchBarHeader>
         <SearchForm onSubmit={this.handleSubmit}>
           <SearchButton>
-            <BsSearch />
+            <FcSearch size="30px" />
           </SearchButton>
           <SearchInput
             name="searchItem"

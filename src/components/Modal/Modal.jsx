@@ -18,7 +18,9 @@ const customStyles = {
     transform: 'translate(-50%, -50%)',
   },
 };
+
 Modal.setAppElement('#root');
+
 export const ModalWindow = ({ isOpen, onClose, largeImageURL, tags }) => {
   return (
     <Modal

@@ -8,4 +8,5 @@ const Button = ({ onClick }) => {
     </LoadMore>
   );
 };
+
 export default Button;

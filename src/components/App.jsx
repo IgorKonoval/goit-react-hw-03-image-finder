@@ -2,7 +2,7 @@ import { Component } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import { GlobalStyle } from './GlobalStyle';
 import { fetchImages, sortedImages } from './Api';
-import { Container } from './App.styled';
+import { Container, Empty } from './App.styled';
 import { ImageGallery } from './ImageGallery/ImageGallery';
 import Button from './Button/Button';
 import { Loader } from './Loader/Loader';
@@ -37,6 +37,7 @@ export class App extends Component {
       page: 1,
     });
   };
+
   loadMore = () => {
     this.setState(prevState => ({
       page: prevState.page + 1,
@@ -75,15 +76,7 @@ export class App extends Component {
         {images.length > 0 ? (
           <ImageGallery images={images} />
         ) : (
-          <p
-            style={{
-              padding: 10,
-              textAlign: 'center',
-              fontSize: 32,
-            }}
-          >
-            Gallery is empty
-          </p>
+          <Empty>Gallery is empty</Empty>
         )}
         {isLoading && <Loader />}
         {images.length > 0 && totalPages !== page && !isLoading && (

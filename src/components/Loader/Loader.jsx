@@ -1,17 +1,16 @@
-import { ProgressBar } from 'react-loader-spinner';
-
+import { Dna } from 'react-loader-spinner';
 import { LoaderWrap } from './Loader.styled';
+
 export const Loader = () => {
   return (
     <LoaderWrap>
-      <ProgressBar
+      <Dna
+        visible={true}
         height="80"
         width="80"
-        ariaLabel="progress-bar-loading"
+        ariaLabel="dna-loading"
         wrapperStyle={{}}
-        wrapperClass="progress-bar-wrapper"
-        borderColor="#F4442E"
-        barColor="#51E5FF"
+        wrapperClass="dna-wrapper"
       />
     </LoaderWrap>
   );
